@@ -75,6 +75,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
+	# PostgreSQL
+	# 'default': {
+	# 	'ENGINE': 'django.db.backends.postgresql',
+	# 	'NAME': 'mysite_db',
+	# 	'USER': 'mysite_user',
+	# 	'PASSWORD': 'H8o)t2Bw',
+	# 	'HOST': 'localhost',
+	# 	'PORT': '5432',
+	# },
+
+	# MySQL
 	# 'default': {
 	# 	'ENGINE': 'django.db.backends.mysql',
 	# 	'NAME': 'mysite_db',
@@ -85,6 +96,7 @@ DATABASES = {
 	# 	},
 	# },
 
+	# SQLite
 	'default': {
 		'ENGINE': 'django.db.backends.sqlite3',
 		'NAME': BASE_DIR / 'db.sqlite3',
@@ -129,8 +141,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'  # os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR / 'media'  # os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
