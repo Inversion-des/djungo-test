@@ -1,6 +1,9 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, DateDetailView
-from .models import Article, Category
+from django.views.generic import ListView, DateDetailView
+from django.shortcuts import redirect
+from django.urls import reverse
+from django.contrib import messages
+from .models import Article, Category, Comment
+from .forms import CommentForm
 
 class HomePageView(ListView):
 	model = Article
@@ -29,11 +32,26 @@ class ArticleDetail(DateDetailView):
 
 	def get_context_data(self, *args, **kwargs):
 		context = super(ArticleDetail, self).get_context_data(*args, **kwargs)
+		context['comments'] = Comment.objects.filter(article=self.object)
+		context['comment_form'] = CommentForm()
 		try:
 			context['images'] = context['item'].images.all()
 		except:
 			pass
 		return context
+
+	def post(self, request, *args, **kwargs):
+		self.object = self.get_object()
+		context = self.get_context_data(object=self.object)
+		comment_form = CommentForm(request.POST)
+		if comment_form.is_valid():
+			new_comment = comment_form.save(commit=False)
+			new_comment.article = self.object
+			new_comment.save()
+			return redirect(self.object.get_absolute_url())
+		else:
+			context['comment_form'] = comment_form
+			return self.render_to_response(context)
 
 
 class ArticleList(ListView):

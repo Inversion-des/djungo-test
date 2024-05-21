@@ -19,5 +19,23 @@
 			{% endif %}
 		</div>
 		<div class='clearfix'></div>
+
+		
+		<h2>Comments</h2>
+		<div>
+			{% for comment in comments %}
+				<p><strong>{{ comment.name }}</strong> ({{ comment.created_on }}):</p>
+				<p>{{ comment.body }}</p>
+			{% empty %}
+				<p>No comments yet.</p>
+			{% endfor %}
+		</div>
+	
+		<h2>Leave a comment</h2>
+		<form method="post">
+			{% csrf_token %}
+			{{ comment_form.as_p }}
+			<button type="submit">Submit</button>
+		</form>
 	</main>
 {% endblock %}
