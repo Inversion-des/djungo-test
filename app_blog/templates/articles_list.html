@@ -4,13 +4,18 @@
 	<main class="articles-list">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="/">Головна</a></li>
+			{% if category %}
+				<li class="breadcrumb-item"><a href="{% url 'articles-list' %}">Публікації</a></li>
+			{% endif %}
 		</ol>
 
-		<h1>Всі публікації</h1>
-
-		{% if category %}
-			{{ category }}
-		{% endif %}
+		<h1>
+			{% if category %}
+				{{ category }}
+			{% else %}
+				Всі публікації
+			{% endif %}
+		</h1>
 
 		{% for item in items %}
 			<div class="articles-row">
