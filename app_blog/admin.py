@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.shortcuts import get_object_or_404
 
-from .models import Article, ArticleImage, Category
+from .models import Article, ArticleImage, Category, Comment
 from .forms import ArticleImageForm
 
 
@@ -51,3 +51,14 @@ class ArticleAdmin(admin.ModelAdmin):
 		return obj.delete()
 
 admin.site.register(Article, ArticleAdmin)
+
+
+class CommentAdmin(admin.ModelAdmin):
+	list_display = ('name', 'email', 'body', 'created_on', 'article')
+	fieldsets = (
+		('', {
+			'fields': ('name', 'email', 'body', 'article'),
+		}),
+	)
+
+admin.site.register(Comment, CommentAdmin)
