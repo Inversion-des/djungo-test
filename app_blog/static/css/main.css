@@ -73,3 +73,35 @@ div.container-image > img {
 	width: 150px;
 	padding-left: 10px;
 }
+
+.top-articles {
+	overflow: hidden;
+	margin-bottom: 50px;
+	padding-inline: 20px;
+}
+.top-articles .alert {
+	line-height: 52px;
+}
+.top-articles dd {
+	font-size: 14px;
+	font-style: italic;
+}
+.top-articles .container-image {
+	float: right;
+	width: 380px;
+	margin-left: 20px;
+}
+
+main.home h3 {
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+
+.about_me-block p {
+	margin-bottom: 10px;
+}
+.about_me-block img {
+	height: 250px;
+	float: right;
+	margin-top: -40px;
+}

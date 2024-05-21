@@ -9,7 +9,8 @@ class HomePageView(ListView):
 
 	def get_context_data(self, **kwargs):
 		context = super(HomePageView, self).get_context_data(**kwargs)
-		context['articles'] = Article.objects.filter(main_page=True)[:5]
+		context['articles'] = Article.objects.filter(main_page=True)[:1]
+		context['other_articles'] = Article.objects.filter(main_page=False)[:3]
 		return context
 
 	def get_queryset(self, *args, **kwargs):
