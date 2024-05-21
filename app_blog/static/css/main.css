@@ -127,3 +127,40 @@ main.home h3 {
 		opacity: 0;
 	}
 }
+
+.comments-list {
+
+}
+.comments-list ul {
+	padding-left: 25px;
+}
+.comments-list li {
+	margin-top: 15px;
+}
+.comments-list li dd {
+	font-size: 14px;
+	margin-bottom: 0px;
+	color: #999;
+	font-style: italic;
+}
+.comments-list li dd strong {
+	font-style: normal;
+	color: #383838;
+}
+.comments-list li p {
+	margin-bottom: 0px;
+}
+
+.comments-form {
+	margin-top: 50px;
+}
+.comments-form form {
+	margin-top: 20px;
+	padding-left: 20px;
+}
+.comments-form label {
+	width: 80px;
+	text-align: right;
+	vertical-align: top;
+	margin-top: 3px;
+}

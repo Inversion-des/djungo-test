@@ -28,22 +28,31 @@
 		</div>
 		<div class='clearfix'></div>
 
-		
-		<h2>Comments</h2>
-		<div>
-			{% for comment in comments %}
-				<p><strong>{{ comment.name }}</strong> ({{ comment.created_on }}):</p>
-				<p>{{ comment.body }}</p>
-			{% empty %}
-				<p>No comments yet.</p>
-			{% endfor %}
+
+		<div class="comments-list">
+			<h4>Коментарі</h4>
+			<ul>
+				{% for comment in comments %}
+					<li>
+						<dd><strong>{{ comment.name }}</strong> ({{ comment.created_on }}):</dd>
+						<p>{{ comment.body }}</p>
+					</li>
+				{% empty %}
+					<p>Ще немає коментарів.</p>
+				{% endfor %}
+			</ul>
 		</div>
-	
-		<h2>Leave a comment</h2>
-		<form method="post">
-			{% csrf_token %}
-			{{ comment_form.as_p }}
-			<button type="submit">Submit</button>
-		</form>
+
+		<div class="comments-form">
+			<h4>Залишити коментар</h4>
+			<form method="post">
+				{% csrf_token %}
+				{{ comment_form.as_p }}
+				<p>
+					<label></label>
+					<button type="submit">Відправити</button>
+				</p>
+			</form>
+		</div>
 	</main>
 {% endblock %}
