@@ -48,6 +48,7 @@ class ArticleDetail(DateDetailView):
 			new_comment = comment_form.save(commit=False)
 			new_comment.article = self.object
 			new_comment.save()
+			messages.success(request, 'Ваш коментар успішно додано.')
 			return redirect(self.object.get_absolute_url())
 		else:
 			context['comment_form'] = comment_form
