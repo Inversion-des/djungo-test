@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-	<div class="article-block">
+	<main class="article-block">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="/">Головна</a></li>
 			<li class="breadcrumb-item"><a href="{% url 'articles-list' %}">Публікації</a></li>
@@ -20,6 +19,5 @@
 			{% endif %}
 		</div>
 		<div class='clearfix'></div>
-	</div>
-
+	</main>
 {% endblock %}

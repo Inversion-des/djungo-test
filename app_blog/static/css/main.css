@@ -1,21 +1,13 @@
-h1 {
-	color: #9C27B0;
-}
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
-@media (max-width: 480px) {
-	h1 {
-		font-size: 18px;
-	}
-}
-
 body {
-	/* background-image: url('../img/bg.jpg'); */
 	background-color: #464c5e;
 	background-repeat: repeat-y;
 }
 
-div > h1 {
+.container > .title {
+	font-size: 40px;
+	text-align: center;
 	color: #fff;
 	font-family: 'Ubuntu', sans-serif;
 }
@@ -25,7 +17,7 @@ body > div > nav > div > a > h4 {
 	font-family: 'Ubuntu', sans-serif;
 }
 
-.article-block {
+main {
 	background: #fff;
 	color: #383838;
 	font-family: 'Ubuntu', sans-serif;
@@ -34,7 +26,7 @@ body > div > nav > div > a > h4 {
 	margin: 10px;
 }
 
-.article-block a {
+main a {
 	color: #383838;
 	font-family: 'Ubuntu', sans-serif;
 }
@@ -55,4 +47,29 @@ div.container-image > img {
 
 .fotorama__img {
 	object-fit: scale-down;
+}
+
+.articles-list h1 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+.articles-list .articles-row {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.articles-list .articles-row h2 {
+	font-size: 25px;
+	margin-bottom: 0;
+}
+.articles-list .articles-row dd {
+	font-size: 11px;
+}
+.articles-list .articles-row dd a {
+	font-weight: bold;
+}
+.articles-list .articles-row .container-image {
+	display: inline-block;
+	float: right;
+	width: 150px;
+	padding-left: 10px;
 }
