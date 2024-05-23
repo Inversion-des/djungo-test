@@ -164,3 +164,7 @@ main.home h3 {
 	vertical-align: top;
 	margin-top: 3px;
 }
+.other-articles .articles-row {
+	line-height: 17px;
+	margin-bottom: 10px;
+}
